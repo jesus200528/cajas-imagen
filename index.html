@@ -1,0 +1,421 @@
+```html
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Academy - Aprende CSS</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: #eef1f8;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        [class*="caja"] {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 25px;
+            border: 3px solid #eef1f8;
+            background-color: var(--c);
+        }
+
+        .fondo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+            z-index: -1;
+            transition: 0.4s;
+        }
+
+        [class*="caja"]:hover .fondo {
+            transform: scale(1.08);
+            opacity: 0.4;
+        }
+
+        .caja1 {
+            --c: #10172e;
+            min-height: 85px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .caja2 {
+            --c: #302b63;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .caja3 {
+            --c: #176b87;
+            min-height: 330px;
+        }
+
+        .caja4 {
+            --c: #253b80;
+            min-height: 330px;
+        }
+
+        .caja5 {
+            --c: #512b81;
+            min-height: 330px;
+        }
+
+        .caja6 {
+            --c: #10172e;
+            min-height: 250px;
+        }
+
+        .caja7 {
+            --c: #176b87;
+            min-height: 250px;
+        }
+
+        .caja8 {
+            --c: #253b80;
+            min-height: 250px;
+        }
+
+        .caja9 {
+            --c: #512b81;
+            min-height: 250px;
+        }
+
+        .caja10 {
+            --c: #10172e;
+            min-height: 250px;
+        }
+
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 1px solid #6c8cff;
+            transition: 0.3s;
+        }
+
+        .btn-nav:hover {
+            background-color: #6c8cff;
+            color: white;
+        }
+
+        .titulo {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+        }
+
+        .subtitulo {
+            color: #a9d8ff;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .icono-grande {
+            font-size: 4rem;
+            color: #a9d8ff;
+        }
+
+        .stat {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .stat-icon {
+            font-size: 2.8rem;
+            color: #a9d8ff;
+        }
+
+        .caja6 a,
+        .caja10 a {
+            color: #a9d8ff;
+            text-decoration: none;
+        }
+
+        .caja6 a:hover,
+        .caja10 a:hover {
+            color: white;
+        }
+
+        .boton-principal {
+            background-color: #6c8cff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+        }
+
+        .boton-principal:hover {
+            background-color: #465fd1;
+            color: white;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- CAJA 1: NAVEGACION -->
+            <nav class="col-12 caja1 d-flex flex-wrap align-items-center justify-content-center gap-2">
+
+                <a class="btn-nav" href="#estructura">
+                    <i class="bi bi-code-slash"></i> HTML
+                </a>
+
+                <a class="btn-nav" href="#especificidad">
+                    <i class="bi bi-palette"></i> CSS
+                </a>
+
+                <a class="btn-nav" href="#pseudo">
+                    <i class="bi bi-bootstrap"></i> Bootstrap
+                </a>
+
+                <a class="btn-nav" href="#boxmodel">
+                    <i class="bi bi-box"></i> Recursos
+                </a>
+
+            </nav>
+
+            <!-- CAJA 2: PORTADA -->
+            <header class="col-12 caja2">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600"
+                    alt="Tecnología">
+
+                <span class="etiqueta">
+                    <i class="bi bi-stars"></i> APRENDE ALGO NUEVO
+                </span>
+
+                <p class="subtitulo">CODE ACADEMY</p>
+
+                <h1 class="titulo">Diseña. Programa. Crea.</h1>
+
+                <p class="fs-4">
+                    Descubre el mundo del desarrollo web y transforma
+                    tus ideas en experiencias digitales.
+                </p>
+
+                <div class="mt-3">
+                    <h2 class="h4">
+                        <i class="bi bi-mortarboard-fill me-2"></i>
+                        Aprende Desarrollo Web
+                    </h2>
+
+                    <p>HTML5, CSS3 y Bootstrap desde cero.</p>
+
+                    <a href="#estructura" class="btn boton-principal btn-lg">
+                        <i class="bi bi-play-fill me-2"></i>
+                        Comenzar ahora
+                    </a>
+                </div>
+
+            </header>
+
+            <!-- CAJA 3: HTML -->
+            <section id="estructura" class="col-12 col-md-4 caja3">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800"
+                    alt="Programación">
+
+                <i class="bi bi-filetype-html icono-grande"></i>
+
+                <h3 class="mt-3">Estructura HTML</h3>
+
+                <p>
+                    Aprende a construir páginas web organizando
+                    correctamente su contenido y estructura.
+                </p>
+
+                <span class="badge bg-light text-dark">Nivel básico</span>
+
+            </section>
+
+            <!-- CAJA 4: CSS -->
+            <section id="especificidad" class="col-12 col-md-4 caja4">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800"
+                    alt="Diseño web">
+
+                <i class="bi bi-filetype-css icono-grande"></i>
+
+                <h3 class="mt-3">Diseño con CSS</h3>
+
+                <p>
+                    Dale vida a tus proyectos con colores,
+                    diseños, animaciones y estilos personalizados.
+                </p>
+
+                <span class="badge bg-light text-dark">Diseño web</span>
+
+            </section>
+
+            <!-- CAJA 5: BOOTSTRAP -->
+            <section id="pseudo" class="col-12 col-md-4 caja5">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800"
+                    alt="Código">
+
+                <i class="bi bi-bootstrap-fill icono-grande"></i>
+
+                <h3 class="mt-3">Bootstrap 5</h3>
+
+                <p>
+                    Crea sitios modernos y adaptables utilizando
+                    componentes y herramientas de Bootstrap.
+                </p>
+
+                <span class="badge bg-light text-dark">Diseño responsive</span>
+
+            </section>
+
+            <!-- CAJA 6: RECURSOS -->
+            <aside id="boxmodel" class="col-12 col-md-3 caja6">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800"
+                    alt="Libros">
+
+                <h4>
+                    <i class="bi bi-compass me-2"></i>
+                    Explora recursos
+                </h4>
+
+                <ul class="list-unstyled mt-4 fs-5">
+
+                    <li class="mb-3">
+                        <a href="https://getbootstrap.com/docs/5.3/"
+                            target="_blank">
+                            <i class="bi bi-book me-2"></i>
+                            Documentación
+                        </a>
+                    </li>
+
+                    <li class="mb-3">
+                        <a href="https://www.w3schools.com/"
+                            target="_blank">
+                            <i class="bi bi-laptop me-2"></i>
+                            Tutoriales
+                        </a>
+                    </li>
+
+                </ul>
+
+            </aside>
+
+            <!-- CAJA 7: ESTADISTICAS -->
+            <section class="col-6 col-md-2 caja7 text-center d-flex flex-column justify-content-center">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600"
+                    alt="Estudiantes">
+
+                <i class="bi bi-people-fill stat-icon"></i>
+
+                <div class="stat">+500</div>
+
+                <p class="mb-0">Estudiantes</p>
+
+            </section>
+
+            <!-- CAJA 8: PRACTICA -->
+            <section class="col-6 col-md-2 caja8 text-center d-flex flex-column justify-content-center">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
+                    alt="Trabajo práctico">
+
+                <i class="bi bi-laptop stat-icon"></i>
+
+                <div class="stat">100%</div>
+
+                <p class="mb-0">Aprendizaje práctico</p>
+
+            </section>
+
+            <!-- CAJA 9: DISPONIBILIDAD -->
+            <section class="col-12 col-md-2 caja9 text-center d-flex flex-column justify-content-center">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600"
+                    alt="Tecnología">
+
+                <i class="bi bi-infinity stat-icon"></i>
+
+                <div class="stat">24/7</div>
+
+                <p class="mb-0">Aprende a tu ritmo</p>
+
+            </section>
+
+            <!-- CAJA 10: CONTACTO -->
+            <footer class="col-12 col-md-3 caja10">
+
+                <img class="fondo"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800"
+                    alt="Equipo de trabajo">
+
+                <h4>
+                    <i class="bi bi-chat-dots-fill me-2"></i>
+                    Contáctanos
+                </h4>
+
+                <p class="mt-4">
+                    <i class="bi bi-envelope me-2"></i>
+                    <a href="mailto:contacto@ejemplo.com">
+                        contacto@ejemplo.com
+                    </a>
+                </p>
+
+                <p>
+                    <i class="bi bi-geo-alt me-2"></i>
+                    Bogotá - Colombia
+                </p>
+
+                <hr>
+
+                <small>© 2026 Code Academy</small>
+
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
